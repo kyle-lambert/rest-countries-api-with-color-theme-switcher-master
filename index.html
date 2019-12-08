@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Google fonts -->
+
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/0856dd953e.js" crossorigin="anonymous"></script>
+  <script src="js/app.js" defer></script>
+  <title>REST Countries API</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Where in the World?</h1>
+    <button class="color-toggle">
+      <i class="color-toggle__icon far fa-moon"></i>
+      <span class="color-toggle__text">Dark Mode</span>
+    </button>
+  </header>
+  <main>
+    <section class="search">
+      <form action="#" class="search-form">
+        <input type="text" class="search-form__input">
+        <select name="regions" id="regionSelect" class="search-form__select">
+          <option class="search-form__option" value="africa">Africa</option>
+          <option class="search-form__option" value="America">America</option>
+          <option class="search-form__option" value="Asia">Asia</option>
+          <option class="search-form__option" value="Europe">Europe</option>
+          <option class="search-form__option" value="Oceania">Oceania</option>
+        </select>
+      </form>
+    </section>
+
+    <section class="country">
+      <div class="card">
+        <a href="#" class="card__link">
+          <img src="" alt="Country flag" class="card__img">
+          <div class="card__body">
+            <h1 class="card__header">Germany</h1>
+            <p class="card__info">Population: <span class="card__span">81,770,900</span></p>
+            <p class="card__info">Region: <span class="card__span">81,770,900</span></p>
+            <p class="card__info">Capital: <span class="card__span">81,770,900</span></p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
