@@ -15,8 +15,8 @@
 </head>
 
 <body>
-  <header class="header">
-    <h1>Where in the World?</h1>
+  <header class="topbar">
+    <h1 class="topbar__header">Where in the World?</h1>
     <button class="color-toggle">
       <i class="color-toggle__icon far fa-moon"></i>
       <span class="color-toggle__text">Dark Mode</span>
@@ -24,14 +24,17 @@
   </header>
   <main>
     <section class="search">
-      <form action="#" class="search-form">
-        <input type="text" class="search-form__input">
-        <select name="regions" id="regionSelect" class="search-form__select">
-          <option class="search-form__option" value="africa">Africa</option>
-          <option class="search-form__option" value="America">America</option>
-          <option class="search-form__option" value="Asia">Asia</option>
-          <option class="search-form__option" value="Europe">Europe</option>
-          <option class="search-form__option" value="Oceania">Oceania</option>
+      <form action="#" class="form">
+        <div class="form__search-box">
+          <i class="form__search-icon fas fa-search"></i>
+          <input type="text" class="form__input">
+        </div>
+        <select name="regions" id="regionSelect" class="form__select">
+          <option class="form__option" value="">Africa</option>
+          <option class="form__option" value="">America</option>
+          <option class="form__option" value="">Asia</option>
+          <option class="form__option" value="">Europe</option>
+          <option class="form__option" value="">Oceania</option>
         </select>
       </form>
     </section>
