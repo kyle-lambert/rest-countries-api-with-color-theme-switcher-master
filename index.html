@@ -14,9 +14,9 @@
   <title>REST Countries API</title>
 </head>
 
-<body>
+<body class="dark-mode">
   <header class="topbar">
-    <h1 class="topbar__header">Where in the World?</h1>
+    <h1 class="topbar__header">Where in the world?</h1>
     <button class="color-toggle">
       <i class="color-toggle__icon far fa-moon"></i>
       <span class="color-toggle__text">Dark Mode</span>
@@ -25,11 +25,11 @@
   <main>
     <section class="search">
       <form action="#" class="form">
-        <div class="form__search-box">
-          <i class="form__search-icon fas fa-search"></i>
-          <input type="text" class="form__input">
+        <div class="form__input-outer">
+          <input type="text" class="form__input" placeholder="Search for a country">
         </div>
         <select name="regions" id="regionSelect" class="form__select">
+          <option class="form__option" value="---">Filter by Region</option>
           <option class="form__option" value="">Africa</option>
           <option class="form__option" value="">America</option>
           <option class="form__option" value="">Asia</option>
@@ -40,6 +40,39 @@
     </section>
 
     <section class="country">
+      <div class="card">
+        <a href="#" class="card__link">
+          <img src="" alt="Country flag" class="card__img">
+          <div class="card__body">
+            <h1 class="card__header">Germany</h1>
+            <p class="card__info">Population: <span class="card__span">81,770,900</span></p>
+            <p class="card__info">Region: <span class="card__span">81,770,900</span></p>
+            <p class="card__info">Capital: <span class="card__span">81,770,900</span></p>
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="#" class="card__link">
+          <img src="" alt="Country flag" class="card__img">
+          <div class="card__body">
+            <h1 class="card__header">Germany</h1>
+            <p class="card__info">Population: <span class="card__span">81,770,900</span></p>
+            <p class="card__info">Region: <span class="card__span">81,770,900</span></p>
+            <p class="card__info">Capital: <span class="card__span">81,770,900</span></p>
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="#" class="card__link">
+          <img src="" alt="Country flag" class="card__img">
+          <div class="card__body">
+            <h1 class="card__header">Germany</h1>
+            <p class="card__info">Population: <span class="card__span">81,770,900</span></p>
+            <p class="card__info">Region: <span class="card__span">81,770,900</span></p>
+            <p class="card__info">Capital: <span class="card__span">81,770,900</span></p>
+          </div>
+        </a>
+      </div>
       <div class="card">
         <a href="#" class="card__link">
           <img src="" alt="Country flag" class="card__img">
