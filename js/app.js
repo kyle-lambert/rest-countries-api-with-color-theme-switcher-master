@@ -1,6 +1,6 @@
 const darkModeToggle = document.querySelector('.color-toggle');
 const searchField = document.querySelector('.form__input');
-const regaionSelect = document.querySelector('.form__select');
+const regionSelect = document.querySelector('.form__select');
 const countriesContainer = document.querySelector('.country');
 
 class Search {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   })
 
-  regaionSelect.addEventListener('change', (e) => {
+  regionSelect.addEventListener('change', (e) => {
     const region = e.target.value;
     ui.clearContainer();
 
@@ -68,10 +68,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       const searchedRegion = allCountries.filter(country => {
         return country.region.toLowerCase() == region.toLowerCase();
       })
-
       searchedRegion.forEach(country => {
         ui.renderCountry(country);
       })
+
     } else {
       allCountries.forEach(country => {
         ui.renderCountry(country);
