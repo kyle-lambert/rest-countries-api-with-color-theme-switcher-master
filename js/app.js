@@ -11,11 +11,21 @@ class Search {
   }
 }
 
+class Storage {
+  setItem(countryObject) {
+    sessionStorage.setItem('country', JSON.stringify(countryObject));
+  }
+
+  getItem() {
+    return JSON.parse(sessionStorage.getItem('country'));
+  }
+}
+
 class UI {
   renderCountry(country) {
     const html =
-      `<div class="card">
-        <a href="#${country.alpha3Code}" class="card__link">
+      `<div class="card" data-country-id="${country.alpha3Code}">
+        <a class="card__link">
           <img src="${country.flag}" alt="Country flag" class="card__img">
           <div class="card__body">
             <h1 class="card__header">${country.name}</h1>
@@ -34,30 +44,31 @@ class UI {
   }
 }
 
+
 document.addEventListener('DOMContentLoaded', async () => {
+  const storage = new Storage();
   const search = new Search();
   const ui = new UI();
 
+
   const allCountries = await search.getCountries();
+  console.log(allCountries);
 
   allCountries.forEach(country => {
     ui.renderCountry(country);
   })
 
+
+
   searchField.addEventListener('keyup', () => {
-    if (searchField.value) {
-      ui.clearContainer();
+    ui.clearContainer();
+    const searchedCountries = allCountries.filter(country => {
+      return country.name.toLowerCase().includes(searchField.value.toLowerCase());
+    })
 
-      const searchedCountries = allCountries.filter(country => {
-        return country.name.toLowerCase().includes(searchField.value.toLowerCase());
-      })
-
-      if (searchedCountries.length > 0) {
-        searchedCountries.forEach(country => {
-          ui.renderCountry(country);
-        })
-      }
-    }
+    searchedCountries.forEach(country => {
+      ui.renderCountry(country);
+    })
   })
 
   regionSelect.addEventListener('change', (e) => {
@@ -71,11 +82,22 @@ document.addEventListener('DOMContentLoaded', async () => {
       searchedRegion.forEach(country => {
         ui.renderCountry(country);
       })
-
     } else {
       allCountries.forEach(country => {
         ui.renderCountry(country);
       })
     }
   })
+
+  countriesContainer.addEventListener('click', function (e) {
+    if (e.target.closest('.card')) {
+      const id = e.target.closest('.card').dataset.countryId;
+      const countryDetail = allCountries.filter(country => country.alpha3Code === id);
+
+      storage.setItem(countryDetail);
+      window.location = 'detail.html';
+    }
+  })
+
+
 });
