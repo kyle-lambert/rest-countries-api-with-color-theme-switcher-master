@@ -1,7 +1,14 @@
-const darkModeToggle = document.querySelector('.color-toggle');
+const themeToggle = document.querySelector('.color-toggle');
 const searchField = document.querySelector('.form__input');
 const regionSelect = document.querySelector('.form__select');
 const countriesContainer = document.querySelector('.country');
+
+(function () {
+  const currentTheme = sessionStorage.getItem('theme') ? sessionStorage.getItem('theme') : null;
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme)
+  }
+})();
 
 class Search {
   async getCountries() {
@@ -16,8 +23,8 @@ class Storage {
     sessionStorage.setItem(key, JSON.stringify(value));
   }
 
-  getItem() {
-    return JSON.parse(sessionStorage.getItem('country'));
+  getItem(key) {
+    return JSON.parse(sessionStorage.getItem(key));
   }
 }
 
@@ -96,5 +103,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   })
 
-
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = sessionStorage.getItem('theme');
+    if (currentTheme) {
+      if (currentTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        sessionStorage.setItem('theme', 'dark');
+      }
+      if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light')
+        sessionStorage.setItem('theme', 'light');
+      }
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      sessionStorage.setItem('theme', 'dark');
+    }
+  })
 });

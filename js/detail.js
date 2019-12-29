@@ -1,4 +1,12 @@
 const detailsContiner = document.querySelector('.detail');
+const themeToggle = document.querySelector('.color-toggle');
+
+(function () {
+  const currentTheme = sessionStorage.getItem('theme') ? sessionStorage.getItem('theme') : null;
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme)
+  }
+})();
 
 function getItem(key) {
   return JSON.parse(sessionStorage.getItem(key))
@@ -61,4 +69,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const countryData = getItem('country');
 
   renderDetail(countryData[0]);
+
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = sessionStorage.getItem('theme');
+    if (currentTheme) {
+      if (currentTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        sessionStorage.setItem('theme', 'dark');
+      }
+      if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light')
+        sessionStorage.setItem('theme', 'light');
+      }
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      sessionStorage.setItem('theme', 'dark');
+    }
+  })
 });
