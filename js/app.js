@@ -12,8 +12,8 @@ class Search {
 }
 
 class Storage {
-  setItem(countryObject) {
-    sessionStorage.setItem('country', JSON.stringify(countryObject));
+  setItem(key, value) {
+    sessionStorage.setItem(key, JSON.stringify(value));
   }
 
   getItem() {
@@ -50,15 +50,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   const search = new Search();
   const ui = new UI();
 
-
   const allCountries = await search.getCountries();
-  console.log(allCountries);
+  storage.setItem('allCountries', allCountries);
 
   allCountries.forEach(country => {
     ui.renderCountry(country);
   })
-
-
 
   searchField.addEventListener('keyup', () => {
     ui.clearContainer();
@@ -94,7 +91,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const id = e.target.closest('.card').dataset.countryId;
       const countryDetail = allCountries.filter(country => country.alpha3Code === id);
 
-      storage.setItem(countryDetail);
+      storage.setItem('country', countryDetail);
       window.location = 'detail.html';
     }
   })

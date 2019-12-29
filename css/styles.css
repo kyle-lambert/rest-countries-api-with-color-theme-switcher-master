@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,600,800&display=swap");
 h1 {
   font-weight: 800;
-  font-size: 2.4rem;
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-bottom: 1.2rem;
+}
+
+h3 {
+  font-weight: 600;
   line-height: 1.3;
   margin-bottom: 1.2rem;
 }
@@ -46,7 +52,7 @@ body {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 300;
   background-color: #fafafa;
   color: #111517;
@@ -56,7 +62,7 @@ body {
   border: none;
   outline: none;
   background-color: transparent;
-  padding: 1rem;
+  padding: .5rem;
   cursor: pointer;
 }
 
@@ -215,17 +221,25 @@ body {
   gap: 3rem;
 }
 
+.detail__body {
+  margin: auto 0;
+}
+
 .detail__header {
   margin-bottom: 2rem;
 }
 
 .detail__img {
+  margin: auto 0;
   border-radius: 3px;
   max-width: 100%;
+  width: 100%;
+  -webkit-box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
 }
 
 .detail__list {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .detail__info {
@@ -233,7 +247,27 @@ body {
   font-weight: 600;
 }
 
+.b-country__header {
+  font-size: 1.6rem;
+}
+
+.b-country__item {
+  display: inline-block;
+  font-size: inherit;
+  padding: 1rem 1.8rem;
+  margin: 0 1rem 1rem 0;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
 @media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  body {
+    font-size: 1.6rem;
+  }
   .form {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -248,6 +282,20 @@ body {
         -ms-flex-positive: 1;
             flex-grow: 1;
     margin-right: 3rem;
+  }
+  .main {
+    padding: 3rem 6rem;
+  }
+  .detail {
+    gap: 6rem;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .detail__img {
+    max-height: 50rem;
+  }
+  .b-country__header {
+    font-size: 1.8rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */
