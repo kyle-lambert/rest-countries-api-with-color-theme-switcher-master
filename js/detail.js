@@ -1,6 +1,11 @@
 const detailsContainer = document.querySelector('.detail');
 const themeToggle = document.querySelector('.color-toggle');
 const themeText = document.querySelector('.color-toggle__text');
+const backButton = document.querySelector('.back-link');
+
+backButton.addEventListener('click', () => {
+  window.location = 'index.html'
+});
 
 (function () {
   const currentTheme = sessionStorage.getItem('theme') ? sessionStorage.getItem('theme') : null;
