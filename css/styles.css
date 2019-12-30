@@ -2,14 +2,14 @@
 :root,
 [data-theme='light'] {
   --primary: hsl(0, 0%, 100%);
-  --secondary: hsl(0, 0%, 83%);
+  --secondary: hsl(0, 0%, 52%);
   --background-color: hsl(0, 0%, 98%);
   --font-color: hsl(200, 15%, 8%);
 }
 
 [data-theme='dark'] {
   --primary: hsl(209, 23%, 22%);
-  --secondary: hsl(0, 0%, 52%);
+  --secondary: hsl(0, 0%, 83%);
   --background-color: hsl(207, 26%, 17%);
   --font-color: hsl(0, 0%, 100%);
 }
@@ -110,24 +110,21 @@ body {
   padding: 3rem;
 }
 
-.form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 .form__input-outer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 2rem;
   position: relative;
+}
+
+.form__input-icon {
+  position: absolute;
+  color: var(--secondary);
+  left: 1.6rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .form__input {
@@ -137,6 +134,7 @@ body {
   padding: 1.8rem 2rem;
   font-size: inherit;
   font-weight: 300;
+  text-indent: 2.6rem;
   color: var(--font-color);
   background-color: var(--primary);
   border: none;
@@ -148,23 +146,44 @@ body {
 
 .form__input::-webkit-input-placeholder {
   color: var(--secondary);
+  opacity: 60%;
 }
 
 .form__input:-ms-input-placeholder {
   color: var(--secondary);
+  opacity: 60%;
 }
 
 .form__input::-ms-input-placeholder {
   color: var(--secondary);
+  opacity: 60%;
 }
 
 .form__input::placeholder {
   color: var(--secondary);
+  opacity: 60%;
+}
+
+.form__select-outer {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+}
+
+.form__select-icon {
+  position: absolute;
+  color: inherit;
+  right: 1.6rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 5;
 }
 
 .form__select {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  position: relative;
+  width: 17rem;
   padding: 1.8rem 2rem;
   font-size: inherit;
   color: inherit;
@@ -288,10 +307,9 @@ body {
     font-size: 1.6rem;
   }
   .form {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -300,7 +318,8 @@ body {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-    margin-right: 3rem;
+    margin-right: 2rem;
+    margin-bottom: 0;
   }
   .main {
     padding: 3rem 6rem;

@@ -5,14 +5,14 @@
 :root,
 [data-theme='light'] {
   --primary: hsl(0, 0%, 100%);
-  --secondary: hsl(0, 0%, 83%);
+  --secondary: hsl(0, 0%, 52%);
   --background-color: hsl(0, 0%, 98%);
   --font-color: hsl(200, 15%, 8%);
 }
 
 [data-theme='dark'] {
   --primary: hsl(209, 23%, 22%);
-  --secondary: hsl(0, 0%, 52%);
+  --secondary: hsl(0, 0%, 83%);
   --background-color: hsl(207, 26%, 17%);
   --font-color: hsl(0, 0%, 100%);
 }
@@ -111,9 +111,9 @@ body {
 }
 
 .form {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  // display: flex;
+  // flex-wrap: wrap;
+  // flex-direction: column;
 
   &__input-outer {
     display: flex;
@@ -121,11 +121,21 @@ body {
     position: relative;
   }
 
+  &__input-icon {
+    position: absolute;
+    color: var(--secondary);
+    left: 1.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+  }
+
   &__input {
     flex: 1;
     padding: 1.8rem 2rem;
     font-size: inherit;
     font-weight: 300;
+    text-indent: 2.6rem;
     color: var(--font-color);
     background-color: var(--primary);
     border: none;
@@ -135,11 +145,27 @@ body {
 
     &::placeholder {
       color: var(--secondary);
+      opacity: 60%;
     }
   }
 
+  &__select-outer {
+    display: inline-flex;
+    position: relative;
+  }
+
+  &__select-icon {
+    position: absolute;
+    color: inherit;
+    right: 1.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+  }
+
   &__select {
-    align-self: flex-start;
+    position: relative;
+    width: 17rem;
     padding: 1.8rem 2rem;
     font-size: inherit;
     color: inherit;
@@ -263,12 +289,13 @@ body {
   }
 
   .form {
-    flex-direction: row;
+    display: flex;
     justify-content: space-between;
 
     &__input-outer {
       flex-grow: 1;
-      margin-right: 3rem;
+      margin-right: 2rem;
+      margin-bottom: 0;
     }
   }
 

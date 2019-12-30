@@ -26,16 +26,20 @@
     <section class="search">
       <form action="#" class="form">
         <div class="form__input-outer">
+          <i class="form__input-icon fas fa-search"></i>
           <input type="text" class="form__input" placeholder="Search for a country">
         </div>
-        <select name="regions" class="form__select">
-          <option class="form__option" value="---">Filter by Region</option>
-          <option class="form__option" value="Africa">Africa</option>
-          <option class="form__option" value="Americas">Americas</option>
-          <option class="form__option" value="Asia">Asia</option>
-          <option class="form__option" value="Europe">Europe</option>
-          <option class="form__option" value="Oceania">Oceania</option>
-        </select>
+        <div class="form__select-outer">
+          <i class="form__select-icon fas fa-angle-down"></i>
+          <select name="regions" class="form__select">
+            <option class="form__option" value="---">Filter by Region</option>
+            <option class="form__option" value="Africa">Africa</option>
+            <option class="form__option" value="Americas">Americas</option>
+            <option class="form__option" value="Asia">Asia</option>
+            <option class="form__option" value="Europe">Europe</option>
+            <option class="form__option" value="Oceania">Oceania</option>
+          </select>
+        </div>
       </form>
     </section>
 

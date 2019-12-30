@@ -2,11 +2,13 @@ const themeToggle = document.querySelector('.color-toggle');
 const searchField = document.querySelector('.form__input');
 const regionSelect = document.querySelector('.form__select');
 const countriesContainer = document.querySelector('.country');
+const themeText = document.querySelector('.color-toggle__text');
 
 (function () {
   const currentTheme = sessionStorage.getItem('theme') ? sessionStorage.getItem('theme') : null;
   if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme)
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    (currentTheme === 'light') ? themeText.textContent = 'Dark Mode': themeText.textContent = 'Light Mode';
   }
 })();
 
@@ -109,14 +111,17 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (currentTheme === 'light') {
         document.documentElement.setAttribute('data-theme', 'dark')
         sessionStorage.setItem('theme', 'dark');
+        themeText.textContent = 'Light Mode';
       }
       if (currentTheme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'light')
         sessionStorage.setItem('theme', 'light');
+        themeText.textContent = 'Dark Mode';
       }
     } else {
       document.documentElement.setAttribute('data-theme', 'dark');
       sessionStorage.setItem('theme', 'dark');
+      themeText.textContent = 'Light Mode';
     }
   })
 });
